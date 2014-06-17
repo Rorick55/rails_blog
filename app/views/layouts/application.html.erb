@@ -2,11 +2,18 @@
 <html>
 <head>
   <title>RailsBlog</title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css" />
+  <link rel="stylesheet" href="/stylesheets/app.css" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if flash.any? %>
+  <div>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
 <%= yield %>
 
